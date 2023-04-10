@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src/test/resources/AppFeatures"},
+		features = {"@rerunFolder/failrerun.txt"},
 		glue = {"stepsDefinitions", "myHooks"},
 		plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				
@@ -18,8 +18,6 @@ import io.cucumber.junit.CucumberOptions;
 				},
 		monochrome = true
 		)
-public class LoginRunner 
-{
-	
+public class FailedRunnerLogin {
 
 }

@@ -1,14 +1,14 @@
-package myHooks;
+package parallel;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.google.common.io.Files;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.qa.factory.DriverFactory;
 import com.qa.util.ConfigReader;
 
@@ -22,6 +22,7 @@ public class ApplicationHooks
 	private WebDriver driver;
 	private ConfigReader configReader;
 	private Properties prop;
+	
 	
 	@Before(order = 0)
 	
@@ -55,9 +56,8 @@ public class ApplicationHooks
 		{
 			String screenshotname=scenario.getName().replaceAll(" ", "_");
 			byte[] sourcepath=((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-			
 			scenario.attach(sourcepath, "image/png", screenshotname);
-			
 		}
+	        
 	}
 }

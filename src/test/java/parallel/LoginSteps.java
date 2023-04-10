@@ -1,4 +1,4 @@
-package stepsDefinitions;
+package parallel;
 
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
